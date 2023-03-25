@@ -665,7 +665,7 @@ h6 {
   margin: 0;
 }
 
-/* .................Stories ................*/
+/* ===============Stories===============*/
 .portfolio-content {
   width: 100%;
   display: grid;
@@ -686,39 +686,10 @@ h6 {
   object-fit: cover;
   border-radius: 0px;
 }
-.col img {
-  max-width: 100%;
-  width: 550px;
-  height: auto;
-  object-fit: cover;
-  border-radius: 12px;
-}
 .col:hover {
   transform: scale(1.1);
 }
-
-@media (max-width:768px) {
-  .portfolio-content{
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(465px, auto));
-  grid-gap: 1rem;
-  align-items: center;
-  margin-top: 5rem;
-  margin-left: 10px;
-  cursor: pointer;
-  flex-wrap: wrap;
-  }
-  .col iframe {
-    max-width: 100%;
-    width: 465px;
-    height: 315px;
-    object-fit: cover;
-    border-radius: 0px;
-    flex-wrap: wrap;
-  }
-}
-/* Stories END */
+/* ===============Stories END=============== */
 
 /*--------------------------------------------------------------
 # Contact Section
