@@ -696,6 +696,28 @@ h6 {
 .col:hover {
   transform: scale(1.1);
 }
+
+@media (max-width:768px) {
+  .portfolio-content{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(465px, auto));
+  grid-gap: 1rem;
+  align-items: center;
+  margin-top: 5rem;
+  margin-left: 10px;
+  cursor: pointer;
+  flex-wrap: wrap;
+  }
+  .col iframe {
+    max-width: 100%;
+    width: 465px;
+    height: 315px;
+    object-fit: cover;
+    border-radius: 0px;
+    flex-wrap: wrap;
+  }
+}
 /* Stories END */
 
 /*--------------------------------------------------------------
