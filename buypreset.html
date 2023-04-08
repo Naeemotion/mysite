@@ -101,12 +101,43 @@
           <div class="container-fluid">
     
             <div class="row gy-4 justify-content-center">
-              <div class="col-xl-3 col-lg-4 col-md-6">
-                <div class="gallery-item h-100">
-                  <img src="assets/img/gallery/1.jpg" class="img-fluid" alt="">
-                  <div class="gallery-links d-flex align-items-center justify-content-center">
-                    <a href="assets/img/gallery/1.jpg" title="Honda Civic" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+              <div class="img-slider">
+                <div class="slide active">
+                  <img src="assets/img/buypreset/1.jpg" alt="">
+                  <div class="info">
+                    <h2>Preset 01</h2>
                   </div>
+                </div>
+                <div class="slide">
+                  <img src="assets/img/buypreset/2.jpg" alt="">
+                  <div class="info">
+                    <h2>Preset 02</h2>
+                  </div>
+                </div>
+                <div class="slide">
+                  <img src="assets/img/buypreset/3.jpg" alt="">
+                  <div class="info">
+                    <h2>Preset 03</h2>
+                  </div>
+                </div>
+                <div class="slide">
+                  <img src="assets/img/buypreset/4.jpg" alt="">
+                  <div class="info">
+                    <h2>Preset 04</h2>
+                  </div>
+                </div>
+                <div class="slide">
+                  <img src="assets/img/buypreset/5.jpg" alt="">
+                  <div class="info">
+                    <h2>Preset 05</h2>
+                  </div>
+                </div>
+                <div class="navigation">
+                  <div class="dot active"></div>
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                  <div class="dot"></div>
                 </div>
               </div>
               <!-- End Gallery Item -->
@@ -117,6 +148,60 @@
         </section><!-- End Gallery Section -->
 
   </main><!-- End #main -->
+  <script type="text/javascript">
+    var slides = document.querySelectorAll('.slide');
+    var btns = document.querySelectorAll('.dot');
+    let currentSlide = 1;
+
+    // Javascript for image slider manual navigation
+    var manualNav = function(manual){
+      slides.forEach((slide) => {
+        slide.classList.remove('active');
+
+        btns.forEach((btn) => {
+          btn.classList.remove('active');
+        });
+      });
+
+      slides[manual].classList.add('active');
+      btns[manual].classList.add('active');
+    }
+
+    btns.forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        manualNav(i);
+        currentSlide = i;
+      });
+    });
+
+    // Javascript for image slider autoplay navigation
+    var repeat = function(activeClass){
+      let active = document.getElementsByClassName('active');
+      let i = 1;
+
+      var repeater = () => {
+        setTimeout(function(){
+          [...active].forEach((activeSlide) => {
+            activeSlide.classList.remove('active');
+          });
+
+        slides[i].classList.add('active');
+        btns[i].classList.add('active');
+        i++;
+
+        if(slides.length == i){
+          i = 0;
+        }
+        if(i >= slides.length){
+          return;
+        }
+        repeater();
+      }, 10000);
+      }
+      repeater();
+    }
+    repeat();
+    </script>
 
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
